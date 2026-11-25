@@ -1,6 +1,3 @@
-app.get('/', (req, res) => {
-  res.json({ message: 'API rodando! Use /health ou /tasks' });
-});
 require('dotenv').config();
 const express = require('express');
 const { Pool } = require('pg');
@@ -27,6 +24,10 @@ async function initDb() {
     );
   `);
 }
+
+app.get('/', (req, res) => {
+  res.json({ message: 'API rodando! Use /health ou /tasks' });
+});
 
 app.get('/health', async (req, res) => {
   try {
