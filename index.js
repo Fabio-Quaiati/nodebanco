@@ -1,3 +1,6 @@
+app.get('/', (req, res) => {
+  res.json({ message: 'API rodando! Use /health ou /tasks' });
+});
 require('dotenv').config();
 const express = require('express');
 const { Pool } = require('pg');
